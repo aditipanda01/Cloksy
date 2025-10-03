@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Internship Reminder Saver",
+  "description": "Save internships from LinkedIn, YouTube, Instagram, WhatsApp into your backend.",
+  "version": "1.0",
+  "permissions": ["tabs", "scripting", "storage"],
+  "host_permissions": [
+    "http://localhost:5000/*"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.linkedin.com/*", "*://*.youtube.com/*", "*://*.instagram.com/*", "*://web.whatsapp.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+}

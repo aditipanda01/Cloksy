@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Save Internship</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <h2>Save Internship</h2>
+  <form id="internshipForm">
+    <label>Title:</label>
+    <input type="text" id="title" required />
+
+    <label>Description:</label>
+    <textarea id="description"></textarea>
+
+    <label>Link:</label>
+    <input type="url" id="link" required />
+
+    <label>Deadline:</label>
+    <input type="date" id="deadline" required />
+
+    <label>Reminder Date:</label>
+    <input type="date" id="reminderDate" required />
+
+    <button type="submit">Save</button>
+  </form>
+
+  <p id="status"></p>
+
+  <script src="popup.js"></script>
+</body>
+</html>
