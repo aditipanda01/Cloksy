@@ -1,5 +1,6 @@
 const express = require('express');
 const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 const router = express.Router();
 
@@ -18,7 +19,11 @@ router.post('/register', async (req, res) => {
     user = new User({ name, email, password: hashedPassword });
     await user.save();
 
-    res.json({ msg: 'User registered successfully' });
+    // Generate token for immediate login after registration
+    const payload = { user: { id: user.id } };
+    const token = jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: '7d' });
+
+    res.json({ msg: 'User registered successfully', token });
   } catch (err) {
     console.error(err.message);
     res.status(500).send('Server error');
@@ -36,7 +41,11 @@ router.post('/login', async (req, res) => {
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) return res.status(400).json({ msg: 'Invalid credentials' });
 
-    res.json({ msg: 'Login successful' });
+    // Generate JWT token
+    const payload = { user: { id: user.id } };
+    const token = jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: '7d' });
+
+    res.json({ msg: 'Login successful', token });
   } catch (err) {
     console.error(err.message);
     res.status(500).send('Server error');

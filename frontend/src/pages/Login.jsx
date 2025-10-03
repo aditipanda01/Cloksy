@@ -12,8 +12,14 @@ function Login() {
     e.preventDefault()
     try {
       const res = await API.post("/auth/login", { email, password })
-      localStorage.setItem("token", res.data.token)
-      navigate("/")
+      
+      // Store the token from response
+      if (res.data.token) {
+        localStorage.setItem("token", res.data.token)
+        navigate("/")
+      } else {
+        setError("No token received from server")
+      }
     } catch (err) {
       setError(err.response?.data?.msg || "Login failed")
     }

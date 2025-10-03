@@ -5,27 +5,47 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <h2>Save Internship</h2>
-  <form id="internshipForm">
-    <label>Title:</label>
-    <input type="text" id="title" required />
+  <h2>Internship Reminder</h2>
+  
+  <!-- Login Section -->
+  <div id="loginSection" style="display: none;">
+    <form id="loginForm">
+      <label>Email:</label>
+      <input type="email" id="loginEmail" required />
+      
+      <label>Password:</label>
+      <input type="password" id="loginPassword" required />
+      
+      <button type="submit">Login</button>
+      <p id="loginError" style="color: red; font-size: 11px;"></p>
+    </form>
+  </div>
 
-    <label>Description:</label>
-    <textarea id="description"></textarea>
+  <!-- Internship Form Section -->
+  <div id="internshipSection" style="display: none;">
+    <button id="logoutBtn" style="background: #f44336; margin-bottom: 10px;">Logout</button>
+    
+    <form id="internshipForm">
+      <label>Title:</label>
+      <input type="text" id="title" required />
 
-    <label>Link:</label>
-    <input type="url" id="link" required />
+      <label>Description:</label>
+      <textarea id="description"></textarea>
 
-    <label>Deadline:</label>
-    <input type="date" id="deadline" required />
+      <label>Link:</label>
+      <input type="url" id="link" required />
 
-    <label>Reminder Date:</label>
-    <input type="date" id="reminderDate" required />
+      <label>Deadline:</label>
+      <input type="date" id="deadline" required />
 
-    <button type="submit">Save</button>
-  </form>
+      <label>Reminder Date:</label>
+      <input type="date" id="reminderDate" required />
 
-  <p id="status"></p>
+      <button type="submit">Save</button>
+    </form>
+
+    <p id="status"></p>
+  </div>
 
   <script src="popup.js"></script>
 </body>

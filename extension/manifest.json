@@ -5,7 +5,8 @@
   "version": "1.0",
   "permissions": ["tabs", "scripting", "storage"],
   "host_permissions": [
-    "http://localhost:5000/*"
+    "http://localhost:5000/*",
+    "http://localhost:5173/*"
   ],
   "action": {
     "default_popup": "popup.html"
@@ -17,6 +18,10 @@
     {
       "matches": ["*://*.linkedin.com/*", "*://*.youtube.com/*", "*://*.instagram.com/*", "*://web.whatsapp.com/*"],
       "js": ["content.js"]
+    },
+    {
+      "matches": ["http://localhost:5173/*"],
+      "js": ["content-script-injector.js"]
     }
   ]
 }
