@@ -1,3 +1,4 @@
+
 import React, { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import API from "../api"
@@ -10,10 +11,9 @@ function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    setError("")
     try {
       const res = await API.post("/auth/login", { email, password })
-      
-      // Store the token from response
       if (res.data.token) {
         localStorage.setItem("token", res.data.token)
         navigate("/")
@@ -21,30 +21,46 @@ function Login() {
         setError("No token received from server")
       }
     } catch (err) {
-      setError(err.response?.data?.msg || "Login failed")
+      setError(err.response?.data?.msg || "Login failed. Please check your credentials.")
     }
   }
 
   return (
-    <div className="flex items-center justify-center min-h-screen">
-      <form onSubmit={handleSubmit} className="bg-white p-6 rounded shadow-md w-80">
-        <h2 className="text-xl font-bold mb-4">Login</h2>
-        {error && <p className="text-red-500">{error}</p>}
+    <div className="flex items-center justify-center min-h-screen bg-[#f5f5dc]"> {/* Beige background */}
+      <form
+        onSubmit={handleSubmit}
+        className="bg-black p-8 rounded-2xl shadow-lg w-96 text-white"
+      >
+        <h2 className="text-2xl font-bold mb-6 text-center">Login</h2>
+
+        {error && (
+          <p className="text-red-400 text-sm mb-3 text-center">{error}</p>
+        )}
+
         <input
           type="email"
           placeholder="Email"
-          className="border w-full p-2 mb-2"
+          className="bg-transparent border border-gray-500 w-full p-3 mb-3 rounded focus:outline-none focus:ring-2 focus:ring-[#D4AF37] placeholder-gray-400 text-white"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          required
         />
+
         <input
           type="password"
           placeholder="Password"
-          className="border w-full p-2 mb-2"
+          className="bg-transparent border border-gray-500 w-full p-3 mb-4 rounded focus:outline-none focus:ring-2 focus:ring-[#D4AF37] placeholder-gray-400 text-white"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          required
         />
-        <button className="bg-blue-600 text-white w-full py-2 rounded">Login</button>
+
+        <button
+          type="submit"
+          className="bg-[#D4AF37] hover:bg-[#bfa130] text-black w-full py-3 rounded font-semibold transition duration-200"
+        >
+          Login
+        </button>
       </form>
     </div>
   )
