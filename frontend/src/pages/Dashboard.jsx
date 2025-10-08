@@ -36,8 +36,8 @@ function Dashboard() {
 
   return (
     <div className="min-h-screen bg-[#f5f5dc] flex flex-col">
-      {/* Navbar */}
-      <nav className="bg-black text-[#f5f5dc] p-4 shadow-lg">
+      {/* Fixed Navbar */}
+      <nav className="fixed top-0 left-0 right-0 bg-black text-[#f5f5dc] p-4 shadow-lg z-50">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <div
             className="flex items-center gap-3 cursor-pointer"
@@ -66,8 +66,8 @@ function Dashboard() {
         </div>
       </nav>
 
-      {/* Main Content */}
-      <div className="max-w-5xl mx-auto p-8 mt-6 bg-white text-black rounded-2xl shadow-lg w-full">
+      {/* Main Content with top padding to account for fixed navbar */}
+      <div className="pt-24 max-w-5xl mx-auto p-8 bg-white text-black rounded-2xl shadow-lg w-full mt-6 mb-8">
         <h1 className="text-3xl font-bold mb-6 text-[#D4AF37] text-center">
           My Internships
         </h1>
