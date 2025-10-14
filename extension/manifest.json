@@ -5,9 +5,10 @@
   "version": "1.0",
   "permissions": ["tabs", "scripting", "storage"],
   "host_permissions": [
-    "http://localhost:5000/*",
-    "http://localhost:5173/*"
-  ],
+  "https://prominder.onrender.com/*",
+  "http://localhost:5173/*"
+],
+  
   "action": {
     "default_popup": "popup.html"
   },
