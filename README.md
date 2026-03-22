@@ -370,7 +370,7 @@ Secure authentication with elegant dark theme design.
 
    Your backend will be available at:
    ```
- [  https://your-app-name.onrender.com](https://prominder.onrender.com)
+https://prominder.onrender.com
    ```
 
 ### Frontend Deployment (Vercel)
@@ -397,7 +397,7 @@ Secure authentication with elegant dark theme design.
 
 5. **Your frontend is live!**
    ```
-  [ https://your-app.vercel.app](https://cloksy-ochre.vercel.app/)
+ (https://cloksy-ochre.vercel.app/)
    ```
 
 ### MongoDB Atlas Setup
