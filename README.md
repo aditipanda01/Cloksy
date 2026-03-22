@@ -397,7 +397,7 @@ https://prominder.onrender.com
 
 5. **Your frontend is live!**
    ```
- (https://cloksy-ochre.vercel.app/)
+ https://cloksy-ochre.vercel.app/
    ```
 
 ### MongoDB Atlas Setup
