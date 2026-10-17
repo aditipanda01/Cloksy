@@ -335,19 +335,7 @@ Authorization: Bearer <your_jwt_token>
 
 ---
 
-## 🎨 Screenshots
 
-### Landing Page
-Beautiful hero section with gradient animations and feature highlights.
-
-### Dashboard
-Clean, organized view of all saved internships with deadline tracking.
-
-### Chrome Extension
-Quick-save interface with auto-filled data from current page.
-
-### Login/Register
-Secure authentication with elegant dark theme design.
 
 ---
 
@@ -370,7 +358,7 @@ Secure authentication with elegant dark theme design.
 
    Your backend will be available at:
    ```
- [  https://your-app-name.onrender.com](https://prominder.onrender.com)
+https://prominder.onrender.com
    ```
 
 ### Frontend Deployment (Vercel)
@@ -397,7 +385,7 @@ Secure authentication with elegant dark theme design.
 
 5. **Your frontend is live!**
    ```
-  [ https://your-app.vercel.app](https://cloksy-ochre.vercel.app/)
+ https://cloksy-ochre.vercel.app/
    ```
 
 ### MongoDB Atlas Setup
