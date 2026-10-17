@@ -38,18 +38,18 @@ function Dashboard() {
     <div className="min-h-screen bg-[#f5f5dc] flex flex-col">
       {/* Fixed Navbar */}
       <nav className="fixed top-0 left-0 right-0 bg-black text-[#f5f5dc] p-4 shadow-lg z-50">
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
+        <div className="max-w-7xl mx-auto px-2 sm:px-0 flex justify-between items-center">
           <div
-            className="flex items-center gap-3 cursor-pointer"
+            className="flex items-center gap-2 sm:gap-3 cursor-pointer"
             onClick={() => navigate("/")}
           >
             <div className="w-10 h-10 bg-[#D4AF37] rounded-lg flex items-center justify-center">
               <Bell className="w-6 h-6 text-black" />
             </div>
-            <span className="text-2xl font-bold text-[#D4AF37]">ProMinder</span>
+            <span className="text-xl sm:text-2xl font-bold text-[#D4AF37]">ProMinder</span>
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 sm:gap-4">
             <button
               onClick={() => navigate("/settings")}
               className="text-[#f5f5dc] hover:text-[#D4AF37] transition font-medium"
@@ -67,8 +67,8 @@ function Dashboard() {
       </nav>
 
       {/* Main Content with top padding to account for fixed navbar */}
-      <div className="pt-24 max-w-5xl mx-auto p-8 bg-white text-black rounded-2xl shadow-lg w-full mt-6 mb-8">
-        <h1 className="text-3xl font-bold mb-6 text-[#D4AF37] text-center">
+      <div className="pt-24 max-w-5xl mx-auto px-4 pb-6 sm:p-8 sm:pt-24 bg-white text-black rounded-2xl shadow-lg w-full mt-6 mb-8">
+        <h1 className="text-2xl sm:text-3xl font-bold mb-6 text-[#D4AF37] text-center">
           My Internships
         </h1>
 

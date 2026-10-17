@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route, Link, useNavigate } from "react-router-dom";
+import { Routes, Route, Link, useNavigate, useLocation } from "react-router-dom";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
@@ -8,6 +8,7 @@ import "./index.css";
 
 function App() {
   const navigate = useNavigate();
+  const { pathname } = useLocation();
 
   const logout = () => {
     localStorage.removeItem("token");
@@ -17,11 +18,12 @@ function App() {
   return (
     <div className="min-h-screen flex flex-col bg-black text-[#F5E6D3]">
       {/* 🔹 Navbar */}
-      <nav className="absolute top-0 left-0 right-0 z-20 bg-transparent px-8 py-4 flex justify-between items-center">
+      {pathname !== "/" && pathname !== "/dashboard" && (
+      <nav className="absolute top-0 left-0 right-0 z-20 bg-transparent px-4 sm:px-8 py-4 flex justify-between items-center">
         <Link to="/" className="text-2xl font-bold text-[#D4AF37] hover:scale-105 transition">
           ProMinder
         </Link>
-        <div className="flex items-center space-x-6">
+        <div className="flex items-center space-x-4 sm:space-x-6">
           {localStorage.getItem("token") ? (
             <button
               onClick={logout}
@@ -47,6 +49,7 @@ function App() {
           )}
         </div>
       </nav>
+      )}
 
       {/* 🔹 Routes */}
       <Routes>

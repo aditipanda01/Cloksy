@@ -1,4 +1,3 @@
-
 import React, { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import API from "../api"
@@ -29,7 +28,7 @@ function Login() {
     <div className="flex items-center justify-center min-h-screen bg-[#f5f5dc]"> {/* Beige background */}
       <form
         onSubmit={handleSubmit}
-        className="bg-black p-8 rounded-2xl shadow-lg w-96 text-white"
+        className="bg-black p-6 sm:p-8 rounded-2xl shadow-lg w-full max-w-sm mx-4 text-white"
       >
         <h2 className="text-2xl font-bold mb-6 text-center">Login</h2>
 
